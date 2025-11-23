@@ -102,8 +102,19 @@ const Sidebar = () => {
                 </div>
             </nav>
 
+            <a
+                href="https://memoways.com/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 text-skyline hover:text-white w-full transition-colors"
+            >
+                <MessageSquare size={20} />
+                <span className="font-body text-sm">Contacter l'équipe</span>
+            </a>
+
+
             {/* Notifications at bottom */}
-            <div className="mt-auto pt-6 border-t border-white/10 relative">
+            <div className="pt-2 border-t border-white/10 relative">
                 <button
                     onClick={() => setShowNotifications(!showNotifications)}
                     className="flex items-center gap-3 px-4 py-3 text-skyline hover:text-white w-full transition-colors relative"
@@ -139,7 +150,7 @@ const Sidebar = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 

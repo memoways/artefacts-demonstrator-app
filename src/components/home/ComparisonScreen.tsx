@@ -1,4 +1,5 @@
 import { ArrowLeft, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface ComparisonScreenProps {
     onBack: () => void;
@@ -126,9 +127,9 @@ const ComparisonScreen = ({ onBack, onReset }: ComparisonScreenProps) => {
                 >
                     🔄 Recommencer
                 </button>
-                <button className="px-6 py-3 rounded-xl bg-autumn-landscape text-white font-bold hover:bg-pizazz shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
+                <Link to="/theater" className="px-6 py-3 rounded-xl bg-autumn-landscape text-white font-bold hover:bg-pizazz shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
                     ✨ Découvrir les démos
-                </button>
+                </Link>
             </div>
         </section>
     );

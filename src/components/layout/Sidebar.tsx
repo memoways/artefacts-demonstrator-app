@@ -20,39 +20,6 @@ const Sidebar = () => {
         { icon: Building2, label: 'PME', path: '/pme' },
     ];
 
-    const notifications = [
-        {
-            id: 1,
-            user: "Sophie Martin",
-            action: "a commenté",
-            target: "Budget prévisionnel",
-            time: "Il y a 2 min",
-            icon: MessageSquare,
-            color: "text-blue-500",
-            bg: "bg-blue-50"
-        },
-        {
-            id: 2,
-            user: "Marc Dubois",
-            action: "a validé",
-            target: "Section Artistique",
-            time: "Il y a 15 min",
-            icon: CheckCircle,
-            color: "text-green-500",
-            bg: "bg-green-50"
-        },
-        {
-            id: 3,
-            user: "IA Assistant",
-            action: "a généré",
-            target: "3 nouvelles suggestions",
-            time: "Il y a 1h",
-            icon: FileText,
-            color: "text-purple-500",
-            bg: "bg-purple-50"
-        }
-    ];
-
     return (
         <div className="w-[280px] h-screen fixed left-0 top-0 bg-gradient-to-b from-royal-curtsy to-dark-knight text-coast-cream flex flex-col p-6 z-50">
             <div className="mb-8">

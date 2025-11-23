@@ -12,6 +12,47 @@ const Opportunities = () => {
                 </p>
             </div>
 
+            {/* Benefits Section (Moved from Home) */}
+            <div className="bg-white rounded-2xl p-8 border border-desert-field shadow-sm mb-16">
+                <h2 className="font-headings text-2xl font-bold text-dark-knight mb-8 text-center">Les Bénéfices Concrets</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 className="font-bold text-whale-skin mb-4 text-lg">Pour l'utilisateur</h3>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-3">
+                                <span className="text-green-500 mt-0.5 text-xl">✓</span>
+                                <span className="text-dark-knight"><strong>Gagner du temps</strong> grâce à l'assistance IA et l'automatisation.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-green-500 mt-0.5 text-xl">✓</span>
+                                <span className="text-dark-knight"><strong>Réduire les erreurs</strong> de saisie et de calculs complexes.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-green-500 mt-0.5 text-xl">✓</span>
+                                <span className="text-dark-knight"><strong>Visualiser l'impact</strong> des décisions en temps réel (budget, planning).</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-whale-skin mb-4 text-lg">Pour l'organisation</h3>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-3">
+                                <span className="text-green-500 mt-0.5 text-xl">✓</span>
+                                <span className="text-dark-knight"><strong>Standardiser les processus</strong> de demande et de reporting.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-green-500 mt-0.5 text-xl">✓</span>
+                                <span className="text-dark-knight"><strong>Centraliser les données</strong> pour une meilleure analyse globale.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="text-green-500 mt-0.5 text-xl">✓</span>
+                                <span className="text-dark-knight"><strong>Faciliter l'archivage</strong> et la conformité des documents officiels.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             {/* Comparison Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
                 {/* Old Way */}

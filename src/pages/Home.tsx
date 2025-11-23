@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, FileText, Sparkles, FileDown, ChevronDown, ChevronUp, Users, Clock, Target } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronUp, Users, Clock, Target, Settings, AlertTriangle, CheckCircle2, XCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -128,36 +128,114 @@ const Home = () => {
 
                     {openSection === 'usage' && (
                         <div className="px-6 py-6 border-t border-desert-field/30 animate-in slide-in-from-top-2 duration-200">
-                            <div className="flex flex-col md:flex-row items-center justify-between gap-4 relative">
+
+                            <div className="mb-8">
+                                <h3 className="font-bold text-whale-skin mb-4 flex items-center gap-2">
+                                    <CheckCircle2 size={20} />
+                                    Ce que vous pouvez faire
+                                </h3>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                                        <h4 className="font-bold text-green-800 text-sm mb-1">Simuler des scénarios</h4>
+                                        <p className="text-green-700 text-xs">Testez différentes hypothèses (budget, planning) et voyez l'impact immédiat.</p>
+                                    </div>
+                                    <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                                        <h4 className="font-bold text-green-800 text-sm mb-1">Collaborer en direct</h4>
+                                        <p className="text-green-700 text-xs">Plusieurs utilisateurs peuvent interagir sur la même interface (simulé ici).</p>
+                                    </div>
+                                    <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                                        <h4 className="font-bold text-green-800 text-sm mb-1">Obtenir de l'aide IA</h4>
+                                        <p className="text-green-700 text-xs">L'assistant suggère des améliorations de texte et détecte les incohérences.</p>
+                                    </div>
+                                    <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                                        <h4 className="font-bold text-green-800 text-sm mb-1">Exporter proprement</h4>
+                                        <p className="text-green-700 text-xs">Générez un PDF officiel prêt à l'envoi une fois le travail terminé.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="font-bold text-pizazz mb-4 flex items-center gap-2">
+                                    <AlertTriangle size={20} />
+                                    Limites actuelles (Démonstrateur)
+                                </h3>
+                                <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                                    <ul className="space-y-2 text-sm text-orange-800">
+                                        <li className="flex items-start gap-2">
+                                            <XCircle size={16} className="mt-0.5 shrink-0" />
+                                            <span>Les données ne sont pas sauvegardées (reset au rafraîchissement).</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <XCircle size={16} className="mt-0.5 shrink-0" />
+                                            <span>L'export PDF est une simulation visuelle.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <XCircle size={16} className="mt-0.5 shrink-0" />
+                                            <span>L'IA est simulée (réponses pré-programmées pour la démo).</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Fabrication Section (New) */}
+                <div className="bg-white rounded-xl border border-desert-field overflow-hidden shadow-sm transition-all duration-300">
+                    <button
+                        onClick={() => toggleSection('fabrication')}
+                        className="w-full px-6 py-4 flex items-center justify-between bg-coast-cream/30 hover:bg-coast-cream/50 transition-colors"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-whale-skin/10 flex items-center justify-center text-whale-skin">
+                                <Settings size={18} />
+                            </div>
+                            <h2 className="font-headings font-bold text-lg text-dark-knight">Fabrication</h2>
+                        </div>
+                        {openSection === 'fabrication' ? <ChevronUp className="text-skyline" /> : <ChevronDown className="text-skyline" />}
+                    </button>
+
+                    {openSection === 'fabrication' && (
+                        <div className="px-6 py-6 border-t border-desert-field/30 animate-in slide-in-from-top-2 duration-200">
+                            <p className="text-dark-knight/80 mb-6 text-center">
+                                Cet artefact a été construit en <strong>4 heures</strong> grâce au "vibe coding". Voici le processus simplifié :
+                            </p>
+
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-2 mb-8 relative">
                                 {/* Connecting Line */}
-                                <div className="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-gradient-to-r from-skyline/20 via-autumn-landscape/50 to-skyline/20 -z-10"></div>
+                                <div className="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-gray-200 -z-10"></div>
 
-                                {/* Step 1 */}
-                                <div className="bg-white p-4 rounded-xl border border-desert-field shadow-sm text-center w-full md:w-1/3 relative">
-                                    <div className="w-12 h-12 mx-auto bg-coast-cream rounded-full flex items-center justify-center text-whale-skin mb-3 border-2 border-white shadow-sm">
-                                        <FileText size={20} />
-                                    </div>
-                                    <h3 className="font-bold text-dark-knight mb-1">1. Saisie Interactive</h3>
-                                    <p className="text-sm text-skyline">Remplissage guidé par des formulaires intelligents et dynamiques.</p>
+                                <div className="bg-white px-3 py-2 rounded-lg border border-gray-200 text-center w-full md:w-auto">
+                                    <span className="text-xs font-bold text-skyline uppercase block mb-1">Étape 1</span>
+                                    <span className="font-bold text-dark-knight text-sm">Recherche</span>
                                 </div>
+                                <ArrowRight size={16} className="text-gray-300 rotate-90 md:rotate-0" />
 
-                                {/* Step 2 */}
-                                <div className="bg-white p-4 rounded-xl border border-autumn-landscape shadow-md text-center w-full md:w-1/3 relative transform scale-105 z-10">
-                                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-autumn-landscape to-pizazz rounded-full flex items-center justify-center text-white mb-3 shadow-lg shadow-autumn-landscape/30">
-                                        <Sparkles size={20} />
-                                    </div>
-                                    <h3 className="font-bold text-dark-knight mb-1">2. Artefact Vivant</h3>
-                                    <p className="text-sm text-skyline">Collaboration, simulation et assistance IA en temps réel.</p>
+                                <div className="bg-white px-3 py-2 rounded-lg border border-gray-200 text-center w-full md:w-auto">
+                                    <span className="text-xs font-bold text-skyline uppercase block mb-1">Étape 2</span>
+                                    <span className="font-bold text-dark-knight text-sm">Documentation</span>
                                 </div>
+                                <ArrowRight size={16} className="text-gray-300 rotate-90 md:rotate-0" />
 
-                                {/* Step 3 */}
-                                <div className="bg-white p-4 rounded-xl border border-desert-field shadow-sm text-center w-full md:w-1/3 relative">
-                                    <div className="w-12 h-12 mx-auto bg-coast-cream rounded-full flex items-center justify-center text-whale-skin mb-3 border-2 border-white shadow-sm">
-                                        <FileDown size={20} />
-                                    </div>
-                                    <h3 className="font-bold text-dark-knight mb-1">3. Export Officiel</h3>
-                                    <p className="text-sm text-skyline">Génération du PDF final pour archivage et transmission.</p>
+                                <div className="bg-white px-3 py-2 rounded-lg border border-autumn-landscape text-center w-full md:w-auto shadow-sm">
+                                    <span className="text-xs font-bold text-autumn-landscape uppercase block mb-1">Étape 3</span>
+                                    <span className="font-bold text-dark-knight text-sm">Vibe Coding (IA)</span>
                                 </div>
+                                <ArrowRight size={16} className="text-gray-300 rotate-90 md:rotate-0" />
+
+                                <div className="bg-white px-3 py-2 rounded-lg border border-gray-200 text-center w-full md:w-auto">
+                                    <span className="text-xs font-bold text-skyline uppercase block mb-1">Étape 4</span>
+                                    <span className="font-bold text-dark-knight text-sm">Déploiement</span>
+                                </div>
+                            </div>
+
+                            <div className="text-center">
+                                <Link
+                                    to="/process"
+                                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-whale-skin text-white rounded-lg font-bold text-sm hover:bg-dark-knight transition-colors"
+                                >
+                                    Voir les coulisses détaillées <ArrowRight size={16} />
+                                </Link>
                             </div>
                         </div>
                     )}

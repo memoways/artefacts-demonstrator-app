@@ -47,46 +47,8 @@ const Process = () => {
                 </div>
             </div>
 
-            {/* Learnings Section */}
-            <div className="grid md:grid-cols-2 gap-8 mb-20">
-                <div className="bg-white rounded-2xl p-8 border border-green-200 shadow-sm">
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="p-3 bg-green-100 rounded-xl text-green-700">
-                            <CheckCircle size={28} />
-                        </div>
-                        <h3 className="font-headings text-2xl font-bold text-dark-knight">Enseignements Clés</h3>
-                    </div>
-                    <ul className="space-y-6">
-                        <li className="flex items-start gap-4">
-                            <div className="mt-1 p-1.5 bg-green-100 rounded-full text-green-700 shrink-0">
-                                <Lightbulb size={16} />
-                            </div>
-                            <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Gestion du flow de concentration</strong>
-                                <p className="text-whale-skin">Comme on fait plusieurs choses en parallèle (en attendant que l'IA travaille), il est crucial de garder une méthode stricte et de toujours centraliser les données pour ne pas se perdre.</p>
-                            </div>
-                        </li>
-                        <li className="flex items-start gap-4">
-                            <div className="mt-1 p-1.5 bg-green-100 rounded-full text-green-700 shrink-0">
-                                <Cpu size={16} />
-                            </div>
-                            <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Diversité des modèles IA</strong>
-                                <p className="text-whale-skin">Chaque LLM a ses forces. La génération des fichiers markdown initiaux (cerveaux et indicateurs) s'est faite en utilisant à tour de rôle Claude, ChatGPT ou Perplexity selon le besoin.</p>
-                            </div>
-                        </li>
-                        <li className="flex items-start gap-4">
-                            <div className="mt-1 p-1.5 bg-green-100 rounded-full text-green-700 shrink-0">
-                                <BookOpen size={16} />
-                            </div>
-                            <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Documentation active</strong>
-                                <p className="text-whale-skin">Les fichiers markdown de contexte sont devenus le "cerveau" du projet, mis à jour en temps réel.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
+            {/* Challenges Section */}
+            <div className="mb-20">
                 <div className="bg-white rounded-2xl p-8 border border-pizazz/30 shadow-sm">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="p-3 bg-pizazz/10 rounded-xl text-pizazz">
@@ -97,29 +59,29 @@ const Process = () => {
                     <ul className="space-y-6">
                         <li className="flex items-start gap-4">
                             <div className="mt-1 p-1.5 bg-pizazz/10 rounded-full text-pizazz shrink-0">
+                                <Lightbulb size={16} />
+                            </div>
+                            <div>
+                                <strong className="block text-dark-knight text-lg mb-1">Gestion de son propre flow de concentration</strong>
+                                <p className="text-whale-skin">Comme on fait plusieurs choses en parallèle (en attendant que l'IA travaille sur le développement), il faut garder une méthode et toujours centraliser les données.</p>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-4">
+                            <div className="mt-1 p-1.5 bg-pizazz/10 rounded-full text-pizazz shrink-0">
                                 <Layers size={16} />
                             </div>
                             <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Fragmentation des outils</strong>
-                                <p className="text-whale-skin">La difficulté principale réside dans l'utilisation conjointe de plusieurs outils : l'application de vibe coding (Antigravity), GitHub pour le versioning et Vercel pour le déploiement.</p>
+                                <strong className="block text-dark-knight text-lg mb-1">Difficulté d'utiliser plusieurs outils différents</strong>
+                                <p className="text-whale-skin">L'application de vibe coding, ici Antigravity de Google, en conjonction avec Github et pour le déployement Vercel.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div className="mt-1 p-1.5 bg-pizazz/10 rounded-full text-pizazz shrink-0">
-                                <Code size={16} />
+                                <Cpu size={16} />
                             </div>
                             <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Hallucinations CSS</strong>
-                                <p className="text-whale-skin">L'IA invente parfois des classes utilitaires qui n'existent pas, nécessitant une vigilance visuelle constante lors des phases de design.</p>
-                            </div>
-                        </li>
-                        <li className="flex items-start gap-4">
-                            <div className="mt-1 p-1.5 bg-pizazz/10 rounded-full text-pizazz shrink-0">
-                                <GitBranch size={16} />
-                            </div>
-                            <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Ton de voix</strong>
-                                <p className="text-whale-skin">L'IA tend vers le "corporate" par défaut. Il faut constamment réinjecter de la personnalité dans les textes pour éviter le contenu générique.</p>
+                                <strong className="block text-dark-knight text-lg mb-1">Diversité des modèles IA</strong>
+                                <p className="text-whale-skin">Comme les divers LLM ont tous des forces et des faiblesses différentes, la génération des fichiers markdown initiaux (les cervaux et indicateurs pour la création de l'artefact) s'est faite en utilisant à tour de rôle Claude, ChatGPT ou Perplexity.</p>
                             </div>
                         </li>
                     </ul>

@@ -10,7 +10,6 @@ interface ExplorationScreenProps {
 const ExplorationScreen = ({ route, onBack, onCompare }: ExplorationScreenProps) => {
     const [collabCount, setCollabCount] = useState(3);
     const [complexity, setComplexity] = useState(3);
-    const [deadline, setDeadline] = useState(2);
     const [expandedStep, setExpandedStep] = useState<number | null>(1);
     const [metrics, setMetrics] = useState({
         time: 0,
@@ -23,7 +22,7 @@ const ExplorationScreen = ({ route, onBack, onCompare }: ExplorationScreenProps)
 
     useEffect(() => {
         calculateMetrics();
-    }, [collabCount, complexity, deadline, route]);
+    }, [collabCount, complexity, route]);
 
     const calculateMetrics = () => {
         // Base calculations
@@ -38,7 +37,7 @@ const ExplorationScreen = ({ route, onBack, onCompare }: ExplorationScreenProps)
             totalEmails = 20 + (collabCount * 8);
             totalVersions = 5 + (collabCount * 2);
 
-            const stressIndex = Math.min(4, Math.floor((collabCount / 3) + (complexity / 2) + (1 / (deadline / 4))));
+            const stressIndex = Math.min(4, Math.floor((collabCount / 3) + (complexity / 2)));
             stressLevel = ['Faible', 'Modéré', 'Moyen', 'Élevé', 'Très élevé'][stressIndex];
 
             contextSwitches = Math.floor(totalTime * 1.5);
@@ -274,20 +273,6 @@ const ExplorationScreen = ({ route, onBack, onCompare }: ExplorationScreenProps)
                                 <input
                                     type="range" min="1" max="5" value={complexity}
                                     onChange={(e) => setComplexity(parseInt(e.target.value))}
-                                    className="w-full accent-autumn-landscape"
-                                />
-                            </div>
-
-                            <div>
-                                <div className="flex justify-between mb-2">
-                                    <label className="text-sm font-medium text-skyline flex items-center gap-2">
-                                        <Calendar size={16} /> Délai
-                                    </label>
-                                    <span className="font-bold text-whale-skin">{deadline} semaines</span>
-                                </div>
-                                <input
-                                    type="range" min="1" max="8" value={deadline}
-                                    onChange={(e) => setDeadline(parseInt(e.target.value))}
                                     className="w-full accent-autumn-landscape"
                                 />
                             </div>

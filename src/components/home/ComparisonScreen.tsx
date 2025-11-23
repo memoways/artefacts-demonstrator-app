@@ -1,4 +1,5 @@
-import { ArrowLeft, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ComparisonScreenProps {
@@ -7,6 +8,8 @@ interface ComparisonScreenProps {
 }
 
 const ComparisonScreen = ({ onBack, onReset }: ComparisonScreenProps) => {
+    const [expandedRow, setExpandedRow] = useState<string | null>(null);
+
     return (
         <section className="min-h-[80vh] py-10 animate-in zoom-in-95 duration-500">
             <button onClick={onBack} className="absolute top-4 left-4 flex items-center gap-1 text-skyline hover:text-whale-skin transition-colors">
@@ -24,49 +27,98 @@ const ComparisonScreen = ({ onBack, onReset }: ComparisonScreenProps) => {
 
             <div className="max-w-5xl mx-auto px-4 mb-16">
                 <div className="bg-white rounded-2xl border-2 border-desert-field shadow-lg overflow-hidden">
-                    <div className="grid grid-cols-3 bg-gray-50 border-b border-desert-field p-4 text-sm font-bold text-skyline uppercase tracking-wider">
-                        <div className="pl-4">Critère</div>
-                        <div className="text-center">📄 Classique</div>
-                        <div className="text-center text-autumn-landscape">✨ Artefacts</div>
+                    <div className="grid grid-cols-12 bg-gray-50 border-b border-desert-field p-4 text-sm font-bold text-skyline uppercase tracking-wider">
+                        <div className="col-span-4 pl-4">Critère</div>
+                        <div className="col-span-4 text-center">📄 Classique</div>
+                        <div className="col-span-4 text-right pr-12 text-autumn-landscape">✨ Artefacts</div>
                     </div>
 
                     {[
-                        { icon: Clock, label: "Temps total", classic: "~18 heures", artefact: "~8 heures", gain: "-56%" },
-                        { icon: Mail, label: "Communications", classic: "~45 emails", artefact: "~12 msgs", gain: "-73%" },
-                        { icon: FileText, label: "Versions", classic: "~12 fichiers", artefact: "1 artefact", gain: "-92%" },
-                        { icon: Smile, label: "Stress", classic: "Élevé", artefact: "Faible", gain: "Mieux" },
-                        { icon: RefreshCw, label: "Contexte", classic: "~30 switch", artefact: "~5 switch", gain: "-83%" },
-                        { icon: AlertTriangle, label: "Erreurs", classic: "~5-7", artefact: "~0-1", gain: "-90%" },
+                        {
+                            id: 'time',
+                            icon: Clock,
+                            label: "Temps total",
+                            classic: "~18 heures",
+                            artefact: "~8 heures",
+                            gain: "-56%",
+                            why: "L'automatisation des calculs et la centralisation des données suppriment les tâches manuelles répétitives."
+                        },
+                        {
+                            id: 'comms',
+                            icon: Mail,
+                            label: "Communications",
+                            classic: "~45 emails",
+                            artefact: "~12 msgs",
+                            gain: "-73%",
+                            why: "Les échanges se font directement dans le contexte (commentaires), réduisant drastiquement les emails."
+                        },
+                        {
+                            id: 'versions',
+                            icon: FileText,
+                            label: "Versions",
+                            classic: "~12 fichiers",
+                            artefact: "1 artefact",
+                            gain: "-92%",
+                            why: "Plus de 'v2_final_final.docx'. L'artefact est toujours à jour, accessible par un lien unique."
+                        },
+                        {
+                            id: 'stress',
+                            icon: Smile,
+                            label: "Stress",
+                            classic: "Élevé",
+                            artefact: "Faible",
+                            gain: "Mieux",
+                            why: "La confiance dans les données et la visibilité sur l'avancement réduisent la charge mentale."
+                        },
+                        {
+                            id: 'context',
+                            icon: RefreshCw,
+                            label: "Contexte",
+                            classic: "~30 switch",
+                            artefact: "~5 switch",
+                            gain: "-83%",
+                            why: "Tout est au même endroit : données, texte, et discussions. Plus besoin de jongler entre les fenêtres."
+                        },
+                        {
+                            id: 'errors',
+                            icon: AlertTriangle,
+                            label: "Erreurs",
+                            classic: "~5-7",
+                            artefact: "~0-1",
+                            gain: "-90%",
+                            why: "Les formules verrouillées et les contrôles de saisie empêchent les erreurs humaines courantes."
+                        },
                     ].map((row, index) => (
-                        <div key={index} className={`grid grid - cols - 3 p - 4 items - center border - b border - gray - 100 hover: bg - gray - 50 transition - colors ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} `}>
-                            <div className="flex items-center gap-3 pl-4 font-medium text-dark-knight">
-                                <row.icon size={18} className="text-skyline" />
-                                {row.label}
+                        <div key={index} className="border-b border-gray-100 last:border-0">
+                            <div
+                                onClick={() => setExpandedRow(expandedRow === row.id ? null : row.id)}
+                                className={`grid grid-cols-12 p-4 items-center cursor-pointer transition-colors ${expandedRow === row.id ? 'bg-autumn-landscape/5' : 'hover:bg-gray-50'}`}
+                            >
+                                <div className="col-span-4 flex items-center gap-3 pl-4 font-medium text-dark-knight">
+                                    <button className="text-skyline hover:text-autumn-landscape transition-colors">
+                                        {expandedRow === row.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                    </button>
+                                    <row.icon size={18} className="text-skyline" />
+                                    {row.label}
+                                </div>
+                                <div className="col-span-4 text-center text-gray-600 font-medium">
+                                    {row.classic}
+                                </div>
+                                <div className="col-span-4 flex items-center justify-end gap-3 pr-4">
+                                    <span className="font-bold text-dark-knight">{row.artefact}</span>
+                                    <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-bold min-w-[45px] text-center">
+                                        {row.gain}
+                                    </span>
+                                </div>
                             </div>
-                            <div className="text-center text-gray-600 font-medium">
-                                {row.classic}
-                            </div>
-                            <div className="text-center font-bold text-dark-knight flex items-center justify-center gap-2">
-                                {row.artefact}
-                                <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
-                                    {row.gain}
-                                </span>
-                            </div>
+
+                            {expandedRow === row.id && (
+                                <div className="bg-autumn-landscape/5 px-12 py-3 text-sm text-skyline animate-in slide-in-from-top-2 duration-200">
+                                    <p><span className="font-bold text-autumn-landscape">Pourquoi ?</span> {row.why}</p>
+                                </div>
+                            )}
                         </div>
                     ))}
-
-                    <div className="grid grid-cols-3 p-4 items-center bg-autumn-landscape/5">
-                        <div className="flex items-center gap-3 pl-4 font-bold text-dark-knight">
-                            <Sparkles size={18} className="text-autumn-landscape" />
-                            Mode collaboration
-                        </div>
-                        <div className="text-center text-gray-500">
-                            Asynchrone (emails)
-                        </div>
-                        <div className="text-center font-bold text-autumn-landscape">
-                            Temps réel synchronisé
-                        </div>
-                    </div>
                 </div>
             </div>
 

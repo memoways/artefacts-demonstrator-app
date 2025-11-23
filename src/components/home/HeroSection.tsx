@@ -13,12 +13,17 @@ const HeroSection = ({ onSelectObjective, onSkip }: HeroSectionProps) => {
                     <span className="text-4xl">💡</span>
                 </div>
                 <h1 className="font-headings text-4xl md:text-5xl font-bold text-dark-knight mb-6 leading-tight">
-                    Bienvenue dans l'ère des <span className="text-transparent bg-clip-text bg-gradient-to-r from-autumn-landscape to-pizazz">artefacts interactifs</span>
+                    Simulez l'impact des <span className="text-transparent bg-clip-text bg-gradient-to-r from-autumn-landscape to-pizazz">artefacts interactifs</span>
                 </h1>
-                <p className="text-xl text-skyline leading-relaxed">
-                    Fini le temps perdu entre Word, Excel, et les mails sans fin.<br className="hidden md:block" />
-                    Découvrez comment transformer votre processus de travail.
+                <p className="text-xl text-skyline leading-relaxed mb-8">
+                    Choisissez un scénario ci-dessous pour découvrir concrètement ce que vous allez apprendre et gagner en transformant vos méthodes de travail.
                 </p>
+
+                <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-whale-skin bg-white/50 p-4 rounded-xl border border-desert-field/30 inline-flex">
+                    <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Gagner 50% de temps</span>
+                    <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Réduire les emails par 3</span>
+                    <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Éliminer le stress</span>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-16 px-4">

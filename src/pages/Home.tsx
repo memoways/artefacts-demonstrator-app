@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import HeroSection from '../components/home/HeroSection';
 import ForkScreen from '../components/home/ForkScreen';
 import ExplorationScreen from '../components/home/ExplorationScreen';
@@ -11,6 +12,15 @@ const Home = () => {
     const [currentScreen, setCurrentScreen] = useState<Screen>('start');
     const [selectedObjective, setSelectedObjective] = useState<string>('');
     const [selectedRoute, setSelectedRoute] = useState<Route>('classic');
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.reset) {
+            handleReset();
+            // Clear state to prevent loop if needed, though location state persists until nav
+            window.history.replaceState({}, document.title);
+        }
+    }, [location]);
 
     const handleSelectObjective = (objective: string) => {
         setSelectedObjective(objective);

@@ -68,6 +68,7 @@ const Sidebar = () => {
                             <li key={item.path}>
                                 <Link
                                     to={item.path}
+                                    state={item.path === '/' ? { reset: true } : undefined}
                                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${isActive(item.path)
                                         ? 'bg-whale-skin/20 border-l-4 border-autumn-landscape text-white'
                                         : 'hover:bg-whale-skin/10 text-skyline hover:text-white'

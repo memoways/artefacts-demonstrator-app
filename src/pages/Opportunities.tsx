@@ -1,4 +1,5 @@
 import { ArrowRight, FileText, Zap, Users, ShieldCheck, RefreshCw } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Opportunities = () => {
     return (
@@ -193,12 +194,17 @@ const Opportunities = () => {
                     Commencez par explorer nos démonstrateurs sectoriels pour voir la puissance des artefacts en action.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button className="px-8 py-4 bg-autumn-landscape hover:bg-pizazz text-white rounded-xl font-bold text-lg shadow-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <Link to="/theater" className="px-8 py-4 bg-autumn-landscape hover:bg-pizazz text-white rounded-xl font-bold text-lg shadow-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
                         Explorer les démos <ArrowRight size={20} />
-                    </button>
-                    <button className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-lg backdrop-blur-sm transition-all flex items-center justify-center gap-2">
+                    </Link>
+                    <a
+                        href="https://memoways.com/contact"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-lg backdrop-blur-sm transition-all flex items-center justify-center gap-2"
+                    >
                         Contacter l'équipe
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Clock, CheckCircle, AlertTriangle, ArrowUpRight, BookOpen, Code, Rocket, Lightbulb, Cpu, Layers, GitBranch } from 'lucide-react';
+import { Clock, CheckCircle, AlertTriangle, ArrowUpRight, BookOpen, Code, Rocket, Lightbulb, Cpu, Layers } from 'lucide-react';
 
 const Process = () => {
     return (

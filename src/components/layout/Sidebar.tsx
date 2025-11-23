@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Theater, Briefcase, Building2, Lightbulb, Bell, MessageSquare, FileText, CheckCircle, BookOpen, Settings } from 'lucide-react';
+import { Home, Theater, Briefcase, Building2, Lightbulb, Bell, MessageSquare, FileText, CheckCircle, BookOpen, Settings, Hammer } from 'lucide-react';
 import { useState } from 'react';
 
 const Sidebar = () => {
@@ -13,6 +13,7 @@ const Sidebar = () => {
         { icon: BookOpen, label: 'Genèse du projet', path: '/genesis' },
         { icon: Settings, label: 'Coulisses', path: '/process' },
         { icon: Lightbulb, label: 'Opportunités', path: '/opportunities' },
+        { icon: Hammer, label: 'Comment créer', path: '/how-to-create' },
     ];
 
     const demos = [

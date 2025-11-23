@@ -8,6 +8,7 @@ import Opportunities from './pages/Opportunities';
 import Genesis from './pages/Genesis';
 import Process from './pages/Process';
 import Features from './pages/Features';
+import HowToCreate from './pages/HowToCreate';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="genesis" element={<Genesis />} />
         <Route path="process" element={<Process />} />
         <Route path="features" element={<Features />} />
+        <Route path="how-to-create" element={<HowToCreate />} />
         <Route path="theater" element={<TheaterDemo />} />
         <Route path="freelance" element={<FreelanceDemo />} />
         <Route path="pme" element={<PMEDemo />} />

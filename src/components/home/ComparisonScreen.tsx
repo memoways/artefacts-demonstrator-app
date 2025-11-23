@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ComparisonScreenProps {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowLeft, ChevronDown, ChevronUp, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, Sparkles, Users, Target, Calendar } from 'lucide-react';
+import { ArrowLeft, ChevronDown, ChevronUp, Clock, Mail, FileText, Smile, RefreshCw, AlertTriangle, Sparkles, Users, Target } from 'lucide-react';
 
 interface ExplorationScreenProps {
     route: 'classic' | 'artefact';

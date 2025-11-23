@@ -1,4 +1,4 @@
-import { BookOpen, Lightbulb, Target, AlertTriangle, ArrowRight, Quote, Layers, Cpu, Puzzle, Zap } from 'lucide-react';
+import { BookOpen, Lightbulb, Target, AlertTriangle, ArrowRight, Quote, Layers, Cpu, Puzzle, Zap, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 
 const Genesis = () => {
@@ -239,11 +239,22 @@ const Genesis = () => {
 
             {/* Full Report Embed */}
             <div className="mt-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-                <h2 className="font-headings text-2xl font-bold text-dark-knight mb-8 flex items-center gap-3">
-                    <span className="bg-dark-knight text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">3</span>
-                    Rapport Complet
-                </h2>
-                <div className="bg-white rounded-2xl shadow-lg border border-desert-field overflow-hidden h-[800px]">
+                <div className="flex items-center justify-between mb-8">
+                    <h2 className="font-headings text-2xl font-bold text-dark-knight flex items-center gap-3">
+                        <span className="bg-dark-knight text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">3</span>
+                        Rapport Complet
+                    </h2>
+                    <a
+                        href="https://docs.google.com/document/d/1sQIYjLrFCQMYsJcTSzRhVjuhSB1wLkbG1DjOWQJ4q4w/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-white border border-desert-field rounded-lg text-sm font-bold text-dark-knight hover:bg-pizazz hover:text-white hover:border-pizazz transition-all shadow-sm"
+                    >
+                        <ExternalLink size={16} />
+                        Ouvrir dans un nouvel onglet
+                    </a>
+                </div>
+                <div className="bg-white rounded-2xl shadow-lg border border-desert-field overflow-hidden h-[1200px]">
                     <iframe
                         src="https://docs.google.com/document/d/1sQIYjLrFCQMYsJcTSzRhVjuhSB1wLkbG1DjOWQJ4q4w/preview"
                         className="w-full h-full border-0"

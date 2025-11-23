@@ -1,10 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Theater, Briefcase, Building2, Lightbulb, Bell, MessageSquare, FileText, CheckCircle, BookOpen, Settings, Hammer } from 'lucide-react';
-import { useState } from 'react';
+import { Home, Theater, Briefcase, Building2, Lightbulb, MessageSquare, BookOpen, Settings, Hammer } from 'lucide-react';
 
 const Sidebar = () => {
     const location = useLocation();
-    const [showNotifications, setShowNotifications] = useState(false);
 
     const isActive = (path: string) => location.pathname === path;
 
@@ -108,50 +106,11 @@ const Sidebar = () => {
                 href="https://memoways.com/contact"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-4 py-3 text-skyline hover:text-white w-full transition-colors"
+                className="flex items-center gap-3 px-4 py-3 text-skyline hover:text-white w-full transition-colors mt-auto"
             >
                 <MessageSquare size={20} />
                 <span className="font-body text-sm">Contacter l'équipe</span>
             </a>
-
-
-            {/* Notifications at bottom */}
-            <div className="pt-2 border-t border-white/10 relative">
-                <button
-                    onClick={() => setShowNotifications(!showNotifications)}
-                    className="flex items-center gap-3 px-4 py-3 text-skyline hover:text-white w-full transition-colors relative"
-                >
-                    <div className="relative">
-                        <Bell size={20} />
-                        <span className="absolute -top-1 -right-1 w-2 h-2 bg-autumn-landscape rounded-full border border-dark-knight"></span>
-                    </div>
-                    <span className="font-body text-sm">Notifications</span>
-                </button>
-
-                {showNotifications && (
-                    <div className="absolute bottom-16 left-4 w-80 bg-white rounded-xl shadow-lg border border-desert-field overflow-hidden animate-in fade-in zoom-in-95 duration-200 z-50">
-                        <div className="p-4 border-b border-desert-field/30 flex justify-between items-center bg-coast-cream/30">
-                            <h3 className="font-bold text-dark-knight text-sm">Notifications</h3>
-                            <span className="text-xs text-autumn-landscape font-bold cursor-pointer hover:underline">Tout marquer comme lu</span>
-                        </div>
-                        <div className="max-h-[300px] overflow-y-auto">
-                            {notifications.map((notif) => (
-                                <div key={notif.id} className="p-4 border-b border-desert-field/10 hover:bg-coast-cream/20 transition-colors cursor-pointer flex gap-3">
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${notif.bg} ${notif.color}`}>
-                                        <notif.icon size={14} />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-dark-knight leading-snug">
-                                            <span className="font-bold">{notif.user}</span> {notif.action} <span className="font-medium text-whale-skin">{notif.target}</span>
-                                        </p>
-                                        <span className="text-[10px] text-skyline mt-1 block">{notif.time}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
         </div >
     );
 };

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, Download, ChevronDown, ChevronUp, Rocket, ExternalLink, Palette, Code, Bot, ArrowRight, CheckCircle, Users, Target, Lightbulb } from 'lucide-react';
+import { FileText, Download, ChevronDown, ChevronUp, Rocket, ExternalLink, Palette, Code, Bot, ArrowRight, CheckCircle, Target, Lightbulb } from 'lucide-react';
 
 const HowToCreate = () => {
     const [expandedSection, setExpandedSection] = useState<number | null>(0);
@@ -149,8 +149,8 @@ const HowToCreate = () => {
                             <div
                                 key={section.id}
                                 className={`border-2 rounded-xl transition-all duration-300 overflow-hidden ${expandedSection === section.id
-                                        ? 'border-whale-skin shadow-md bg-white'
-                                        : 'border-desert-field hover:border-skyline bg-white/50'
+                                    ? 'border-whale-skin shadow-md bg-white'
+                                    : 'border-desert-field hover:border-skyline bg-white/50'
                                     }`}
                             >
                                 <button

@@ -236,7 +236,23 @@ const Genesis = () => {
                     ))}
                 </div>
             </div>
-        </div>
+
+            {/* Full Report Embed */}
+            <div className="mt-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+                <h2 className="font-headings text-2xl font-bold text-dark-knight mb-8 flex items-center gap-3">
+                    <span className="bg-dark-knight text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">3</span>
+                    Rapport Complet
+                </h2>
+                <div className="bg-white rounded-2xl shadow-lg border border-desert-field overflow-hidden h-[800px]">
+                    <iframe
+                        src="https://docs.google.com/document/d/1sQIYjLrFCQMYsJcTSzRhVjuhSB1wLkbG1DjOWQJ4q4w/preview"
+                        className="w-full h-full border-0"
+                        title="Rapport Complet - Little Helpers"
+                        allow="autoplay"
+                    ></iframe>
+                </div>
+            </div>
+        </div >
     );
 };
 

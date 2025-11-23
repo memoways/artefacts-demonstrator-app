@@ -7,12 +7,12 @@ const Genesis = () => {
             author: "Nate Sweletter",
             url: "https://natesweletter.substack.com/p/the-new-ai-operating-system-of-work-goodbye",
             icon: "🏗️",
-            summary: "Introduit le concept d'instruments exécutables remplaçant les documents statiques. Ces artefacts intègrent la logique décisionnelle, fournissent un audit trail immédiat et éliminent les boucles de feedback inutiles.",
+            summary: "Imagine un 'AI operating system of work' où les documents statiques sont remplacés par des instruments exécutables. Ces artefacts encapsulent la logique, la décision et l'action, rendant le reporting passif obsolète.",
             keyPoints: [
-                "Intégration de la logique décisionnelle dans l'interface",
+                "Artefacts exécutables vs documents statiques",
+                "Centré sur la décision et l'action",
                 "Audit trail immédiat et traçabilité",
-                "Élimination des réunions de suivi",
-                "Évolution itérative de l'outil"
+                "Fin du reporting passif et des réunions de suivi"
             ]
         },
         {
@@ -20,12 +20,12 @@ const Genesis = () => {
             author: "Google Research",
             url: "#",
             icon: "🧪",
-            summary: "Démontre que les LLM modernes peuvent générer des interfaces utilisateur complètes et fonctionnelles. L'étude révèle une préférence utilisateur de 83% pour les UI génératives par rapport au markdown standard.",
+            summary: "Démontre que les LLM peuvent générer des interfaces riches (web apps, jeux, simulateurs) à la volée. L'étude révèle une préférence utilisateur de 83% pour ces UI génératives par rapport au texte brut.",
             keyPoints: [
-                "83% de préférence pour les UI génératives",
-                "44% de comparabilité avec des experts humains",
-                "Nécessité d'un prompt engineering rigoureux",
-                "Architecture serveur exposant des outils"
+                "Pipeline complet (Prompt + Outils + UI)",
+                "Préférence utilisateur forte (83%)",
+                "Interfaces riches (Apps, Jeux, Simulateurs)",
+                "Architecture serveur nécessaire pour les outils"
             ]
         },
         {
@@ -33,12 +33,12 @@ const Genesis = () => {
             author: "Ben Davies Romano",
             url: "https://bendaviesromano.medium.com/designing-systems-not-prompts-a-complete-guide-to-making-ai-actually-work-with-systems-thinking-8f5395192a2",
             icon: "⚙️",
-            summary: "Plaide pour une pensée systémique. L'IA n'est pas une boîte magique mais un composant d'un système plus large qui nécessite contraintes, validation et boucles de feedback.",
+            summary: "L'IA n'est pas une boîte noire magique. Il faut concevoir des systèmes explicites en 6 blocs (scope, inputs, process, rules, output, evaluation) pour garantir robustesse et fiabilité.",
             keyPoints: [
-                "Définir d'abord les contraintes du système",
-                "Concevoir pour la robustesse, pas la perfection",
-                "Itérer sur le système complet end-to-end",
-                "Instrumenter pour apprendre des échecs"
+                "Modèle en 6 blocs explicites",
+                "Design Artefact réutilisable",
+                "Contraintes et validation rigoureuses",
+                "IA comme composant du système, pas le tout"
             ]
         },
         {
@@ -46,12 +46,12 @@ const Genesis = () => {
             author: "Ink & Switch",
             url: "https://www.inkandswitch.com/essay/malleable-software/",
             icon: "🧩",
-            summary: "Explore le concept de logiciel malléable : des applications que les utilisateurs peuvent modifier et adapter sans être développeurs. Les artefacts générés par LLM incarnent cette vision.",
+            summary: "Défend la vision d'un logiciel malléable où l'utilisateur peut reconfigurer ses outils à la volée. Une 'pente douce' (gentle slope) permet de passer progressivement d'utilisateur à créateur.",
             keyPoints: [
-                "Inspectabilité du fonctionnement",
-                "Modifiabilité progressive par l'utilisateur",
-                "Partageabilité des modifications",
-                "Pérennité face aux mises à jour"
+                "Adaptation locale sans ingénieurs",
+                "Gentle slope : utilisateur → créateur",
+                "Reconfiguration à la volée selon le besoin",
+                "Outils génériques mais usages spécifiques"
             ]
         }
     ];

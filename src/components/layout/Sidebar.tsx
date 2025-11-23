@@ -10,10 +10,10 @@ const Sidebar = () => {
 
     const menuItems = [
         { icon: Home, label: 'Accueil', path: '/' },
-        { icon: BookOpen, label: 'Genèse du projet', path: '/genesis' },
-        { icon: Settings, label: 'Coulisses', path: '/process' },
         { icon: Lightbulb, label: 'Opportunités', path: '/opportunities' },
         { icon: Hammer, label: 'Comment créer', path: '/how-to-create' },
+        { icon: BookOpen, label: 'Genèse du projet', path: '/genesis' },
+        { icon: Settings, label: 'Coulisses', path: '/process' },
     ];
 
     const demos = [

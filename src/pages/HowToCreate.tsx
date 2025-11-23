@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, Download, ChevronDown, ChevronUp, Rocket, ExternalLink, Palette, Code, Bot } from 'lucide-react';
+import { FileText, Download, ChevronDown, ChevronUp, Rocket, ExternalLink, Palette, Code, Bot, ArrowRight, CheckCircle, Users, Target, Lightbulb } from 'lucide-react';
 
 const HowToCreate = () => {
     const [expandedSection, setExpandedSection] = useState<number | null>(0);
@@ -7,35 +7,117 @@ const HowToCreate = () => {
     const sections = [
         {
             id: 0,
-            title: "1. Design & Prototype",
+            title: "1. Design & Prototype : System Thinking",
             icon: Palette,
             color: "text-pizazz",
             bg: "bg-pizazz/10",
-            content: "Utilisez des outils comme Figma pour le design visuel, ou V0 par Vercel pour générer des interfaces React directement par prompt. L'objectif est de valider l'expérience utilisateur avant tout code complexe."
+            content: (
+                <div className="space-y-4">
+                    <p>
+                        Oubliez les maquettes statiques page par page. Adoptez le <strong>System Thinking</strong>.
+                        On ne dessine plus des écrans, on conçoit un système de composants vivants.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 className="font-bold text-gray-500 mb-2 text-sm uppercase">Avant (Page Thinking)</h4>
+                            <div className="space-y-2 text-sm text-gray-600">
+                                <div className="flex items-center gap-2"><div className="w-3 h-3 bg-gray-300 rounded-full"></div> Maquette Home.png</div>
+                                <div className="flex items-center gap-2"><div className="w-3 h-3 bg-gray-300 rounded-full"></div> Maquette Dashboard.png</div>
+                                <div className="flex items-center gap-2"><div className="w-3 h-3 bg-gray-300 rounded-full"></div> Spécifications.pdf</div>
+                            </div>
+                        </div>
+                        <div className="bg-pizazz/5 p-4 rounded-lg border border-pizazz/20">
+                            <h4 className="font-bold text-pizazz mb-2 text-sm uppercase">Maintenant (System Thinking)</h4>
+                            <div className="space-y-2 text-sm text-dark-knight">
+                                <div className="flex items-center gap-2"><div className="w-3 h-3 bg-pizazz rounded-full"></div> Design System (Tokens)</div>
+                                <div className="flex items-center gap-2"><div className="w-3 h-3 bg-pizazz rounded-full"></div> Composants Réutilisables</div>
+                                <div className="flex items-center gap-2"><div className="w-3 h-3 bg-pizazz rounded-full"></div> Prototype Interactif (V0)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p className="text-sm">
+                        <strong>Outils :</strong> Figma pour les tokens, V0 (Vercel) pour générer les premières interfaces React par prompt.
+                    </p>
+                </div>
+            )
         },
         {
             id: 1,
-            title: "2. Logique & Développement",
+            title: "2. Logique & Développement : Vibe Coding",
             icon: Code,
             color: "text-autumn-landscape",
             bg: "bg-autumn-landscape/10",
-            content: "Des environnements comme Replit ou Cursor permettent d'assembler la logique métier rapidement. Le 'Vibe Coding' consiste à décrire le comportement souhaité en langage naturel et laisser l'IA générer le code boilerplate."
+            content: (
+                <div className="space-y-4">
+                    <p>
+                        Le code n'est plus une barrière. Avec le <strong>Vibe Coding</strong>, vous décrivez le comportement en langage naturel, l'IA écrit la syntaxe.
+                    </p>
+                    <div className="bg-dark-knight/5 p-4 rounded-lg border border-dark-knight/10 my-4">
+                        <div className="flex flex-col md:flex-row items-center gap-4 justify-between text-sm">
+                            <div className="bg-white p-3 rounded shadow-sm text-center flex-1">
+                                <span className="block font-bold text-autumn-landscape">Intention</span>
+                                "Je veux un tableau qui trie par date"
+                            </div>
+                            <ArrowRight className="text-gray-400 hidden md:block" />
+                            <div className="bg-dark-knight text-white p-3 rounded shadow-sm text-center flex-1 font-mono text-xs">
+                                AI Agent (Cursor/Replit)
+                                <br />
+                                Generates React Code...
+                            </div>
+                            <ArrowRight className="text-gray-400 hidden md:block" />
+                            <div className="bg-white p-3 rounded shadow-sm text-center flex-1">
+                                <span className="block font-bold text-green-600">Résultat</span>
+                                Composant fonctionnel
+                            </div>
+                        </div>
+                    </div>
+                    <p className="text-sm">
+                        <strong>Méthode :</strong> Itérez phrase par phrase. Si le résultat n'est pas bon, reformulez l'intention, ne corrigez pas le code vous-même.
+                        <br />
+                        <strong>Outils :</strong> Replit pour le tout-en-un, Cursor pour l'IDE augmenté.
+                    </p>
+                </div>
+            )
         },
         {
             id: 2,
-            title: "3. Intelligence Embarquée",
+            title: "3. Intelligence Embarquée : Logique Probabiliste",
             icon: Bot,
             color: "text-whale-skin",
             bg: "bg-whale-skin/10",
-            content: "Intégrez les modèles frontières (Gemini 3, ChatGPT 5.1) via API pour traiter les données non structurées. Ne codez pas de règles rigides, laissez le LLM gérer la variabilité des entrées utilisateur."
+            content: (
+                <div className="space-y-4">
+                    <p>
+                        Ne codez pas de règles rigides ("Si A alors B"). Intégrez une <strong>logique probabiliste</strong> capable de gérer l'ambiguïté.
+                    </p>
+                    <ul className="list-disc pl-5 space-y-2 text-sm">
+                        <li>Connectez les modèles frontières (Gemini 3, ChatGPT 5.1) via API.</li>
+                        <li>Utilisez le "System Prompt" pour définir la personnalité et les contraintes de l'artefact.</li>
+                        <li>Laissez le LLM structurer les données non structurées (emails, notes, PDF).</li>
+                    </ul>
+                </div>
+            )
         },
         {
             id: 3,
-            title: "4. Déploiement & Itération",
+            title: "4. Déploiement & Itération Continue",
             icon: Rocket,
             color: "text-blue-600",
             bg: "bg-blue-100",
-            content: "Déployez en un clic sur Vercel ou Netlify. Recueillez les retours utilisateurs immédiatement et itérez. Un artefact n'est jamais fini, il évolue avec les besoins de l'équipe."
+            content: (
+                <div className="space-y-4">
+                    <p>
+                        Un artefact est vivant. Il est mis en ligne en un clic et évolue chaque jour.
+                    </p>
+                    <div className="flex items-center gap-4 text-sm bg-blue-50 p-3 rounded-lg border border-blue-100">
+                        <Rocket size={20} className="text-blue-600" />
+                        <span><strong>Déploiement :</strong> Vercel / Netlify. Connecté à GitHub. Chaque sauvegarde est une nouvelle version en ligne.</span>
+                    </div>
+                    <p className="text-sm">
+                        Recueillez les retours utilisateurs immédiatement. Une fonctionnalité manque ? Ajoutez-la en 10 minutes. C'est la fin des cycles de validation de 3 mois.
+                    </p>
+                </div>
+            )
         }
     ];
 
@@ -54,18 +136,21 @@ const HowToCreate = () => {
 
             {/* Interactive Synthesis */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-                <div className="space-y-6">
-                    <h2 className="font-headings text-2xl font-bold text-dark-knight mb-6 flex items-center gap-3">
-                        <FileText className="text-autumn-landscape" />
-                        Les Étapes de Production
-                    </h2>
+                <div className="space-y-8">
+                    <div className="flex items-center justify-between">
+                        <h2 className="font-headings text-2xl font-bold text-dark-knight flex items-center gap-3">
+                            <FileText className="text-autumn-landscape" />
+                            Les Étapes de Production
+                        </h2>
+                    </div>
+
                     <div className="space-y-4">
                         {sections.map((section) => (
                             <div
                                 key={section.id}
                                 className={`border-2 rounded-xl transition-all duration-300 overflow-hidden ${expandedSection === section.id
-                                    ? 'border-whale-skin shadow-md bg-white'
-                                    : 'border-desert-field hover:border-skyline bg-white/50'
+                                        ? 'border-whale-skin shadow-md bg-white'
+                                        : 'border-desert-field hover:border-skyline bg-white/50'
                                     }`}
                             >
                                 <button
@@ -81,8 +166,8 @@ const HowToCreate = () => {
                                     {expandedSection === section.id ? <ChevronUp size={20} className="text-whale-skin" /> : <ChevronDown size={20} className="text-skyline" />}
                                 </button>
 
-                                <div className={`transition-all duration-300 ease-in-out ${expandedSection === section.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                    <div className="p-4 pt-0 text-dark-knight font-medium leading-relaxed border-t border-desert-field/30 mt-2">
+                                <div className={`transition-all duration-300 ease-in-out ${expandedSection === section.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                                    <div className="p-6 pt-0 text-dark-knight font-medium leading-relaxed border-t border-desert-field/30 mt-2">
                                         {section.content}
                                     </div>
                                 </div>
@@ -91,9 +176,9 @@ const HowToCreate = () => {
                     </div>
                 </div>
 
-                {/* Context/Quote */}
+                {/* Context/Quote & Google Link */}
                 <div className="flex flex-col gap-6">
-                    <div className="bg-gradient-to-br from-dark-knight to-whale-skin rounded-2xl p-8 text-white shadow-xl relative overflow-hidden flex-1 flex flex-col justify-center">
+                    <div className="bg-gradient-to-br from-dark-knight to-whale-skin rounded-2xl p-8 text-white shadow-xl relative overflow-hidden flex-1 flex flex-col justify-center min-h-[300px]">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
                         <div className="relative z-10 text-center">
                             <p className="text-lg font-medium leading-relaxed italic opacity-90">
@@ -117,6 +202,54 @@ const HowToCreate = () => {
                             <p className="text-sm text-skyline">Découvrez comment l'IA générative permet de créer des interfaces utilisateur riches et interactives à la volée.</p>
                         </div>
                     </a>
+                </div>
+            </div>
+
+            {/* Memoways Coaching Section */}
+            <div className="bg-coast-cream border-2 border-autumn-landscape/20 rounded-2xl p-8 mb-20 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-autumn-landscape/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div className="md:col-span-2 space-y-4">
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="bg-autumn-landscape text-white p-2 rounded-lg">
+                                <Target size={24} />
+                            </div>
+                            <h2 className="font-headings text-2xl font-bold text-dark-knight">Devenez Autonome</h2>
+                        </div>
+                        <p className="text-lg text-whale-skin font-medium leading-relaxed">
+                            Memoways ne se contente pas de livrer des outils. Nous vous aidons à mettre en place les workflows, les bonnes pratiques et la culture nécessaire.
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                            <div className="flex items-start gap-3">
+                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                <span className="text-dark-knight text-sm"><strong>Co-construction :</strong> Nous prototypons ensemble pour transférer la compétence.</span>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                <span className="text-dark-knight text-sm"><strong>Formation Action :</strong> Apprenez les principes du Vibe Coding en pratiquant.</span>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                <span className="text-dark-knight text-sm"><strong>Boîte à Outils :</strong> Repartez avec votre stack technique configurée (Replit, Cursor, V0).</span>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                <span className="text-dark-knight text-sm"><strong>Autonomie Rapide :</strong> L'objectif est que vous puissiez itérer seuls le plus vite possible.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center justify-center text-center bg-white/50 p-6 rounded-xl border border-autumn-landscape/10">
+                        <Lightbulb size={48} className="text-autumn-landscape mb-4" />
+                        <h3 className="font-bold text-dark-knight mb-2">Prêt à changer de méthode ?</h3>
+                        <a
+                            href="https://memoways.com/contact"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-autumn-landscape text-white px-6 py-3 rounded-lg font-bold hover:bg-pizazz transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+                        >
+                            Démarrer un pilote <ArrowRight size={18} />
+                        </a>
+                    </div>
                 </div>
             </div>
 

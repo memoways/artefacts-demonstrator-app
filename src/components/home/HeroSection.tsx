@@ -15,7 +15,7 @@ const HeroSection = ({ onSelectObjective, onSkip }: HeroSectionProps) => {
                 <h1 className="font-headings text-4xl md:text-5xl font-bold text-dark-knight mb-6 leading-tight">
                     Simulez l'impact des <span className="text-transparent bg-clip-text bg-gradient-to-r from-autumn-landscape to-pizazz">artefacts interactifs</span>
                 </h1>
-                <p className="text-xl text-skyline leading-relaxed mb-8">
+                <p className="text-xl font-medium text-whale-skin leading-relaxed mb-8">
                     Choisissez un scénario ci-dessous pour découvrir concrètement ce que vous allez apprendre et gagner en transformant vos méthodes de travail.
                 </p>
 

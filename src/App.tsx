@@ -1,14 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import Home from './pages/Home';
+import HowToCreate from './pages/HowToCreate';
 import TheaterDemo from './pages/TheaterDemo';
+import Footer from './components/layout/Footer'; // Assuming Footer is in components/layout
 import FreelanceDemo from './pages/FreelanceDemo';
 import PMEDemo from './pages/PMEDemo';
 import Opportunities from './pages/Opportunities';
 import Genesis from './pages/Genesis';
 import Process from './pages/Process';
+import Home from './pages/Home';
 import Features from './pages/Features';
 import HowToCreate from './pages/HowToCreate';
+import Footer from './components/layout/Footer'; // Assuming Footer is in components/layout
 
 function App() {
   return (

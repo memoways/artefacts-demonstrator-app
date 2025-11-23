@@ -8,7 +8,7 @@ const Opportunities = () => {
                 <h1 className="font-headings text-4xl font-bold text-dark-knight mb-6">
                     Pourquoi passer aux <span className="text-transparent bg-clip-text bg-gradient-to-r from-autumn-landscape to-pizazz">Artefacts Vivants</span> ?
                 </h1>
-                <p className="text-xl text-skyline max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl font-medium text-whale-skin max-w-3xl mx-auto leading-relaxed">
                     Le document statique est une relique du passé. Découvrez comment le changement de paradigme vers des interfaces logicielles transforme votre manière de travailler.
                 </p>
             </div>

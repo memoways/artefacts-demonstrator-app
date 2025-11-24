@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, Download, ChevronDown, ChevronUp, Rocket, ExternalLink, Palette, Code, Bot, ArrowRight, CheckCircle, Target, Lightbulb, Zap, Table, Users, Monitor, FlaskConical } from 'lucide-react';
+import { FileText, ChevronDown, ChevronUp, Rocket, ExternalLink, Palette, Code, Bot, ArrowRight, CheckCircle, Target, Lightbulb, Zap, Table, Users, Monitor, FlaskConical } from 'lucide-react';
 
 const HowToCreate = () => {
     const [expandedSection, setExpandedSection] = useState<number | null>(0);
@@ -397,30 +397,7 @@ const HowToCreate = () => {
                 </div>
             </div>
 
-            {/* PDF Viewer Section */}
-            <div className="bg-white rounded-2xl border border-desert-field shadow-lg overflow-hidden">
-                <div className="p-6 border-b border-desert-field flex flex-col md:flex-row justify-between items-center gap-4 bg-gray-50">
-                    <h2 className="font-headings text-xl font-bold text-dark-knight flex items-center gap-2">
-                        <FileText size={24} className="text-whale-skin" />
-                        Rapport Complet
-                    </h2>
-                    <a
-                        href="/etude-artefacts-perplexity.pdf"
-                        download
-                        className="flex items-center gap-2 px-4 py-2 bg-autumn-landscape text-white rounded-lg hover:bg-pizazz transition-colors font-bold text-sm shadow-sm"
-                    >
-                        <Download size={16} />
-                        Télécharger le PDF
-                    </a>
-                </div>
-                <div className="w-full h-[800px] bg-gray-100">
-                    <iframe
-                        src="/etude-artefacts-perplexity.pdf"
-                        className="w-full h-full"
-                        title="Etude artefacts interactifs no-code par Perplexity"
-                    />
-                </div>
-            </div>
+
         </div>
     );
 };

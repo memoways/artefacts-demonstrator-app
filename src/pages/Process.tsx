@@ -2,17 +2,33 @@ import { Clock, CheckCircle, AlertTriangle, ArrowUpRight, BookOpen, Code, Rocket
 
 const Process = () => {
     return (
-        <div className="max-w-5xl mx-auto pb-20 px-4 animate-in fade-in duration-500">
-            <div className="mb-16 text-center">
-                <div className="inline-flex items-center justify-center p-3 bg-autumn-landscape/10 rounded-full mb-6">
-                    <Clock className="text-autumn-landscape" size={32} />
+        <div className="max-w-6xl mx-auto pb-20 px-4">
+            {/* Header */}
+            <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="inline-flex items-center justify-center p-3 bg-pizazz/10 rounded-full mb-6">
+                    <Clock className="text-pizazz" size={32} />
                 </div>
-                <h1 className="font-headings text-4xl md:text-5xl font-bold text-dark-knight mb-6">Coulisses de fabrication</h1>
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-desert-field rounded-full text-autumn-landscape font-bold text-xl shadow-sm">
-                    <span>Temps total de réalisation : 5 heures</span>
+                <h1 className="font-headings text-3xl md:text-5xl font-bold text-dark-knight mb-6">
+                    Coulisses de fabrication
+                </h1>
+                <div className="inline-flex flex-col md:flex-row items-center gap-4 md:gap-8 bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-desert-field">
+                    <div className="text-center px-4">
+                        <div className="text-3xl md:text-4xl font-bold text-pizazz mb-1">12h</div>
+                        <div className="text-xs font-bold text-skyline uppercase tracking-wider">Temps Total</div>
+                    </div>
+                    <div className="w-full h-px md:w-px md:h-12 bg-desert-field"></div>
+                    <div className="text-center px-4">
+                        <div className="text-3xl md:text-4xl font-bold text-autumn-landscape mb-1">3</div>
+                        <div className="text-xs font-bold text-skyline uppercase tracking-wider">Outils IA</div>
+                    </div>
+                    <div className="w-full h-px md:w-px md:h-12 bg-desert-field"></div>
+                    <div className="text-center px-4">
+                        <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">0€</div>
+                        <div className="text-xs font-bold text-skyline uppercase tracking-wider">Coût API</div>
+                    </div>
                 </div>
             </div>
-
+            {/* Detailed Metrics */}
             <div className="prose prose-lg max-w-3xl mx-auto text-dark-knight mb-20">
                 <p className="lead text-2xl font-medium text-whale-skin text-center leading-relaxed">
                     Cet artefact a été fabriqué de manière <strong>improvisée et itérative</strong>, pour créer une application qui montre et raconte en même temps ce changement de paradigme.

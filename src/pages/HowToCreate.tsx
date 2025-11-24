@@ -298,131 +298,128 @@ const HowToCreate = () => {
                                 ? 'border-whale-skin shadow-md bg-white'
                                 : 'border-desert-field hover:border-skyline bg-white/50'
                                 }`}
-                        >
-                            <button
-                                onClick={() => setExpandedCase(expandedCase === useCase.id ? null : useCase.id)}
-                                className="w-full p-6 flex items-center justify-between text-left"
-                            >
-                                <div className="flex items-center gap-4">
-                                    <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${useCase.bg} ${useCase.color}`}>
-                                        <useCase.icon size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-dark-knight text-lg">{useCase.title}</h3>
-                                        <p className="text-sm text-skyline hidden sm:block">{useCase.usage}</p>
-                                    </div>
-                                </div>
-                                {expandedCase === useCase.id ? <ChevronUp size={24} className="text-whale-skin" /> : <ChevronDown size={24} className="text-skyline" />}
-                            </button>
+                <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 bg-dark-knight text-white rounded-xl flex items-center justify-center font-bold text-xl">1</div>
+                    <h2 className="font-headings text-2xl md:text-3xl font-bold text-dark-knight">Design & Prototype</h2>
+                </div>
 
-                            <div className={`transition-all duration-300 ease-in-out ${expandedCase === useCase.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                                <div className="p-6 pt-0 border-t border-desert-field/30 mt-2">
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h4 className="font-bold text-sm text-skyline uppercase tracking-wider mb-2">Stack Technique</h4>
-                                            <p className="text-sm text-dark-knight font-medium bg-gray-50 p-3 rounded-lg border border-gray-100">
-                                                {useCase.stack}
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-sm text-skyline uppercase tracking-wider mb-2">Friction Adressée</h4>
-                                            <p className="text-sm text-dark-knight font-medium bg-gray-50 p-3 rounded-lg border border-gray-100">
-                                                {useCase.friction}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="mt-6">
-                                        <h4 className="font-bold text-sm text-skyline uppercase tracking-wider mb-3">Fonctionnalités Clés</h4>
-                                        <ul className="space-y-2">
-                                            {useCase.features.map((feature, idx) => (
-                                                <li key={idx} className="flex items-start gap-2 text-sm text-dark-knight">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-autumn-landscape shrink-0 mt-1.5"></div>
-                                                    {feature}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-white p-6 md:p-8 rounded-2xl border border-desert-field shadow-sm">
+                        <div className="flex items-center gap-3 mb-6">
+                            <Palette className="text-pizazz" size={24} />
+                            <h3 className="font-bold text-xl text-dark-knight">L'Interface d'abord</h3>
                         </div>
-                    ))}
+                        <p className="text-whale-skin mb-6 leading-relaxed">
+                            Ne commencez jamais par le code. Dessinez l'interface ou décrivez-la en détail. L'IA a besoin de "voir" ce qu'elle doit construire.
+                        </p>
+                        <div className="bg-coast-cream rounded-xl p-4 border border-desert-field/50">
+                            <h4 className="text-xs font-bold text-skyline uppercase tracking-wider mb-3">Prompt Design</h4>
+                            <p className="text-sm font-mono text-dark-knight bg-white p-3 rounded-lg border border-desert-field">
+                                "Crée une interface moderne avec une sidebar sombre à gauche, une zone principale claire, et des cartes avec des ombres douces..."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="bg-white p-6 md:p-8 rounded-2xl border border-desert-field shadow-sm">
+                        <div className="flex items-center gap-3 mb-6">
+                            <FileText className="text-autumn-landscape" size={24} />
+                            <h3 className="font-bold text-xl text-dark-knight">Le Contenu est Roi</h3>
+                        </div>
+                        <p className="text-whale-skin mb-6 leading-relaxed">
+                            Préparez vos textes, vos données et vos règles métier dans des fichiers Markdown clairs. C'est le "cerveau" que vous donnerez à l'IA.
+                        </p>
+                        <ul className="space-y-3">
+                            <li className="flex items-center gap-2 text-sm text-dark-knight">
+                                <CheckCircle size={16} className="text-green-500" />
+                                <span>PRD (Product Requirements Document)</span>
+                            </li>
+                            <li className="flex items-center gap-2 text-sm text-dark-knight">
+                                <CheckCircle size={16} className="text-green-500" />
+                                <span>Design System (Couleurs, Typo)</span>
+                            </li>
+                            <li className="flex items-center gap-2 text-sm text-dark-knight">
+                                <CheckCircle size={16} className="text-green-500" />
+                                <span>Contenu (Textes, Données)</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            {/* Memoways Coaching Section */}
-            <div className="bg-coast-cream border-2 border-autumn-landscape/20 rounded-2xl p-8 mb-20 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-autumn-landscape/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
-                <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <div className="md:col-span-2 space-y-4">
-                        <div className="flex items-center gap-3 mb-2">
-                            <div className="bg-autumn-landscape text-white p-2 rounded-lg">
-                                <Target size={24} />
+                {/* Memoways Coaching Section */}
+                <div className="bg-coast-cream border-2 border-autumn-landscape/20 rounded-2xl p-8 mb-20 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-autumn-landscape/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div className="md:col-span-2 space-y-4">
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="bg-autumn-landscape text-white p-2 rounded-lg">
+                                    <Target size={24} />
+                                </div>
+                                <h2 className="font-headings text-2xl font-bold text-dark-knight">Devenez Autonome</h2>
                             </div>
-                            <h2 className="font-headings text-2xl font-bold text-dark-knight">Devenez Autonome</h2>
+                            <p className="text-lg text-whale-skin font-medium leading-relaxed">
+                                Memoways ne se contente pas de livrer des outils. Nous vous aidons à mettre en place les workflows, les bonnes pratiques et la culture nécessaire.
+                            </p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                    <span className="text-dark-knight text-sm"><strong>Co-construction :</strong> Nous prototypons ensemble pour transférer la compétence.</span>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                    <span className="text-dark-knight text-sm"><strong>Formation Action :</strong> Apprenez les principes du Vibe Coding en pratiquant.</span>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                    <span className="text-dark-knight text-sm"><strong>Boîte à Outils :</strong> Repartez avec votre stack technique configurée (Replit, Cursor, V0).</span>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
+                                    <span className="text-dark-knight text-sm"><strong>Autonomie Rapide :</strong> L'objectif est que vous puissiez itérer seuls le plus vite possible.</span>
+                                </div>
+                            </div>
                         </div>
-                        <p className="text-lg text-whale-skin font-medium leading-relaxed">
-                            Memoways ne se contente pas de livrer des outils. Nous vous aidons à mettre en place les workflows, les bonnes pratiques et la culture nécessaire.
-                        </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                            <div className="flex items-start gap-3">
-                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
-                                <span className="text-dark-knight text-sm"><strong>Co-construction :</strong> Nous prototypons ensemble pour transférer la compétence.</span>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
-                                <span className="text-dark-knight text-sm"><strong>Formation Action :</strong> Apprenez les principes du Vibe Coding en pratiquant.</span>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
-                                <span className="text-dark-knight text-sm"><strong>Boîte à Outils :</strong> Repartez avec votre stack technique configurée (Replit, Cursor, V0).</span>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <CheckCircle className="text-pizazz shrink-0 mt-1" size={20} />
-                                <span className="text-dark-knight text-sm"><strong>Autonomie Rapide :</strong> L'objectif est que vous puissiez itérer seuls le plus vite possible.</span>
-                            </div>
+                        <div className="flex flex-col items-center justify-center text-center bg-white/50 p-6 rounded-xl border border-autumn-landscape/10">
+                            <Lightbulb size={48} className="text-autumn-landscape mb-4" />
+                            <h3 className="font-bold text-dark-knight mb-2">Prêt à changer de méthode ?</h3>
+                            <a
+                                href="https://memoways.com/contact"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-autumn-landscape text-white px-6 py-3 rounded-lg font-bold hover:bg-pizazz transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+                            >
+                                Démarrer un pilote <ArrowRight size={18} />
+                            </a>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-center text-center bg-white/50 p-6 rounded-xl border border-autumn-landscape/10">
-                        <Lightbulb size={48} className="text-autumn-landscape mb-4" />
-                        <h3 className="font-bold text-dark-knight mb-2">Prêt à changer de méthode ?</h3>
+                </div>
+
+                {/* PDF Viewer Section */}
+                <div className="bg-white rounded-2xl border border-desert-field shadow-lg overflow-hidden">
+                    <div className="p-6 border-b border-desert-field flex flex-col md:flex-row justify-between items-center gap-4 bg-gray-50">
+                        <h2 className="font-headings text-xl font-bold text-dark-knight flex items-center gap-2">
+                            <FileText size={24} className="text-whale-skin" />
+                            Rapport Complet
+                        </h2>
                         <a
-                            href="https://memoways.com/contact"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-autumn-landscape text-white px-6 py-3 rounded-lg font-bold hover:bg-pizazz transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+                            href="/etude-artefacts-perplexity.pdf"
+                            download
+                            className="flex items-center gap-2 px-4 py-2 bg-autumn-landscape text-white rounded-lg hover:bg-pizazz transition-colors font-bold text-sm shadow-sm"
                         >
-                            Démarrer un pilote <ArrowRight size={18} />
+                            <Download size={16} />
+                            Télécharger le PDF
                         </a>
                     </div>
+                    <div className="w-full h-[800px] bg-gray-100">
+                        <iframe
+                            src="/etude-artefacts-perplexity.pdf"
+                            className="w-full h-full"
+                            title="Etude artefacts interactifs no-code par Perplexity"
+                        />
+                    </div>
                 </div>
             </div>
-
-            {/* PDF Viewer Section */}
-            <div className="bg-white rounded-2xl border border-desert-field shadow-lg overflow-hidden">
-                <div className="p-6 border-b border-desert-field flex flex-col md:flex-row justify-between items-center gap-4 bg-gray-50">
-                    <h2 className="font-headings text-xl font-bold text-dark-knight flex items-center gap-2">
-                        <FileText size={24} className="text-whale-skin" />
-                        Rapport Complet
-                    </h2>
-                    <a
-                        href="/etude-artefacts-perplexity.pdf"
-                        download
-                        className="flex items-center gap-2 px-4 py-2 bg-autumn-landscape text-white rounded-lg hover:bg-pizazz transition-colors font-bold text-sm shadow-sm"
-                    >
-                        <Download size={16} />
-                        Télécharger le PDF
-                    </a>
-                </div>
-                <div className="w-full h-[800px] bg-gray-100">
-                    <iframe
-                        src="/etude-artefacts-perplexity.pdf"
-                        className="w-full h-full"
-                        title="Etude artefacts interactifs no-code par Perplexity"
-                    />
-                </div>
-            </div>
-        </div>
-    );
+            );
 };
 
-export default HowToCreate;
+            export default HowToCreate;

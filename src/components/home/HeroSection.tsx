@@ -12,23 +12,20 @@ const HeroSection = ({ onSelectObjective, onSkip }: HeroSectionProps) => {
 
     return (
         <section className="min-h-[80vh] flex flex-col items-center justify-center animate-in fade-in duration-700 py-12">
-            <div className="text-center mb-12 max-w-4xl mx-auto">
+            <div className="text-center mb-16 max-w-3xl mx-auto px-4">
                 <div className="mb-6 inline-block p-3 bg-yellow-100 rounded-full">
                     <span className="text-4xl">💡</span>
                 </div>
-                <h1 className="font-headings text-4xl md:text-6xl font-bold text-dark-knight mb-8 leading-tight">
-                    Découvrez les possibilités des <span className="text-transparent bg-clip-text bg-gradient-to-r from-autumn-landscape to-pizazz">artefacts interactifs</span>
+                <h1 className="font-headings text-3xl md:text-5xl font-bold text-dark-knight mb-6 leading-tight">
+                    Simulez l'impact des <span className="text-transparent bg-clip-text bg-gradient-to-r from-autumn-landscape to-pizazz">artefacts interactifs</span>
                 </h1>
-                <p className="text-2xl font-medium text-whale-skin leading-relaxed mb-10 max-w-3xl mx-auto">
-                    Choisissez un scénario ci-dessous pour découvrir ce que sont ces artefacts interactifs et découvrir ce que vous allez gagner en transformant vos méthodes de travail.
+                <p className="text-lg md:text-xl font-medium text-whale-skin leading-relaxed mb-8">
+                    Choisissez un scénario ci-dessous pour découvrir concrètement ce que vous allez apprendre et gagner en transformant vos méthodes de travail.
                 </p>
-
-                <div className="flex flex-wrap justify-center gap-6 text-lg font-bold text-dark-knight bg-white p-6 rounded-2xl border-2 border-desert-field shadow-lg inline-flex transform hover:scale-105 transition-transform duration-300">
-                    <span className="flex items-center gap-2"><span className="text-green-500 text-2xl">✓</span> Gagner 50% de temps</span>
-                    <span className="w-px h-8 bg-desert-field hidden sm:block"></span>
-                    <span className="flex items-center gap-2"><span className="text-green-500 text-2xl">✓</span> Réduire les emails par 3</span>
-                    <span className="w-px h-8 bg-desert-field hidden sm:block"></span>
-                    <span className="flex items-center gap-2"><span className="text-green-500 text-2xl">✓</span> Éliminer le stress</span>
+                <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 text-sm font-medium text-whale-skin bg-white/50 p-4 rounded-xl border border-desert-field/30 inline-flex">
+                    <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Gagner 50% de temps</span>
+                    <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Réduire les emails par 3</span>
+                    <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Éliminer le stress</span>
                 </div>
             </div>
 
@@ -114,6 +111,38 @@ const HeroSection = ({ onSelectObjective, onSkip }: HeroSectionProps) => {
                     <div className="flex items-center text-autumn-landscape font-bold text-sm group-hover:translate-x-1 transition-transform">
                         Découvrir comment <ArrowRight size={16} className="ml-1" />
                     </div>
+                </button>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-center gap-6 w-full max-w-4xl px-4 mb-16">
+                <button
+                    onClick={() => onSelectObjective('productivity')}
+                    className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl border border-desert-field hover:border-pizazz transition-all duration-300 text-left flex-1"
+                >
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-autumn-landscape to-pizazz rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-start justify-between mb-4">
+                        <div className="p-3 bg-autumn-landscape/10 text-autumn-landscape rounded-xl group-hover:bg-pizazz group-hover:text-white transition-colors">
+                            <Rocket size={32} />
+                        </div>
+                        <ArrowRight className="text-desert-field group-hover:text-pizazz transition-colors" />
+                    </div>
+                    <h3 className="font-headings text-xl font-bold text-dark-knight mb-2">Je veux produire plus vite</h3>
+                    <p className="text-whale-skin text-sm">Découvrez comment automatiser la création de livrables complexes.</p>
+                </button>
+
+                <button
+                    onClick={() => onSelectObjective('creativity')}
+                    className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl border border-desert-field hover:border-pizazz transition-all duration-300 text-left flex-1"
+                >
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pizazz to-autumn-landscape rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-start justify-between mb-4">
+                        <div className="p-3 bg-pizazz/10 text-pizazz rounded-xl group-hover:bg-pizazz group-hover:text-white transition-colors">
+                            <Palette size={32} />
+                        </div>
+                        <ArrowRight className="text-desert-field group-hover:text-pizazz transition-colors" />
+                    </div>
+                    <h3 className="font-headings text-xl font-bold text-dark-knight mb-2">Je veux innover mieux</h3>
+                    <p className="text-whale-skin text-sm">Explorez de nouvelles pistes créatives assistées par l'IA.</p>
                 </button>
             </div>
 

@@ -104,16 +104,16 @@ const Genesis = () => {
     ];
 
     return (
-        <div className="max-w-6xl mx-auto pb-20 px-4">
+        <div className="max-w-6xl mx-auto pb-20 px-4 md:px-4">
             {/* Header */}
             <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <div className="inline-flex items-center justify-center p-3 bg-pizazz/10 rounded-full mb-6">
                     <BookOpen className="text-pizazz" size={32} />
                 </div>
-                <h1 className="font-headings text-4xl md:text-5xl font-bold text-dark-knight mb-6">
+                <h1 className="font-headings text-3xl md:text-5xl font-bold text-dark-knight mb-6">
                     Genèse du projet
                 </h1>
-                <p className="text-xl text-whale-skin max-w-3xl mx-auto leading-relaxed">
+                <p className="text-lg md:text-xl text-whale-skin max-w-3xl mx-auto leading-relaxed">
                     Ce démonstrateur est né de la convergence de plusieurs recherches récentes sur l'avenir du travail et des interfaces IA.
                     Voici la synthèse de ces travaux fondateurs.
                 </p>
@@ -127,7 +127,7 @@ const Genesis = () => {
                 </h2>
 
                 <div className="bg-white rounded-2xl shadow-sm border border-desert-field overflow-hidden">
-                    <div className="flex border-b border-desert-field overflow-x-auto">
+                    <div className="flex border-b border-desert-field overflow-x-auto no-scrollbar">
                         {(Object.keys(synthesis) as Array<keyof typeof synthesis>).map((key) => {
                             const item = synthesis[key];
                             const Icon = item.icon;
@@ -254,7 +254,7 @@ const Genesis = () => {
                         Ouvrir dans un nouvel onglet
                     </a>
                 </div>
-                <div className="bg-white rounded-2xl shadow-lg border border-desert-field overflow-hidden h-[1200px]">
+                <div className="bg-white rounded-2xl shadow-lg border border-desert-field overflow-hidden h-[600px] md:h-[1200px]">
                     <iframe
                         src="https://docs.google.com/document/d/1sQIYjLrFCQMYsJcTSzRhVjuhSB1wLkbG1DjOWQJ4q4w/preview"
                         className="w-full h-full border-0"

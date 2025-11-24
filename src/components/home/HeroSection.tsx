@@ -1,4 +1,4 @@
-import { ClipboardList, Coins, PartyPopper, ArrowDown, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { ClipboardList, Coins, PartyPopper, ArrowDown, ChevronDown, ChevronUp, ArrowRight, Rocket, Palette } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 

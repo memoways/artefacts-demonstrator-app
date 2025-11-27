@@ -1,7 +1,10 @@
 import { ArrowRight, FileText, Zap, Users, ShieldCheck, RefreshCw } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Opportunities = () => {
+    const [activeStep, setActiveStep] = useState(1);
+
     return (
         <div className="max-w-5xl mx-auto pb-10">
             <div className="mb-16 text-center">
@@ -134,56 +137,127 @@ const Opportunities = () => {
 
                 <h2 className="font-headings text-2xl font-bold text-dark-knight mb-12 text-center relative z-10">Le Flux de Valeur "Little Helpers"</h2>
 
-                <div className="flex flex-col md:flex-row items-center justify-between relative z-10 gap-8">
+                <div className="flex flex-col md:flex-row items-center justify-between relative z-10 gap-8 mb-12">
                     {/* Step 1 */}
-                    <div className="flex flex-col items-center text-center max-w-[200px]">
-                        <div className="w-20 h-20 rounded-2xl bg-white border-2 border-whale-skin flex items-center justify-center shadow-lg mb-4 relative group">
-                            <Users size={32} className="text-whale-skin group-hover:scale-110 transition-transform" />
+                    <div
+                        className={`flex flex-col items-center text-center max-w-[200px] cursor-pointer transition-all duration-300 ${activeStep === 1 ? 'scale-105' : 'opacity-70 hover:opacity-100'}`}
+                        onClick={() => setActiveStep(1)}
+                    >
+                        <div className={`w-20 h-20 rounded-2xl bg-white border-2 ${activeStep === 1 ? 'border-autumn-landscape shadow-autumn-landscape/30' : 'border-whale-skin'} flex items-center justify-center shadow-lg mb-4 relative group transition-colors`}>
+                            <Users size={32} className={`${activeStep === 1 ? 'text-autumn-landscape' : 'text-whale-skin'} transition-colors`} />
                             <div className="absolute -top-2 -right-2 w-6 h-6 bg-autumn-landscape rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
                         </div>
-                        <h3 className="font-bold text-dark-knight mb-2">Co-Création</h3>
+                        <h3 className={`font-bold ${activeStep === 1 ? 'text-autumn-landscape' : 'text-dark-knight'} mb-2 transition-colors`}>Co-Création</h3>
                         <p className="text-sm text-skyline">Saisie guidée et collaborative dans l'interface</p>
                     </div>
 
                     {/* Arrow */}
-                    <div className="hidden md:flex flex-1 items-center justify-center px-4">
-                        <div className="h-0.5 w-full bg-gradient-to-r from-whale-skin to-autumn-landscape relative">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-xs font-bold text-skyline uppercase tracking-wider">
-                                Simulation
-                            </div>
+                    <div className="hidden md:flex flex-1 items-center justify-center px-4 relative h-10">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 text-xs font-bold text-skyline uppercase tracking-wider mb-2">
+                            Simulation
+                        </div>
+                        <div className="h-0.5 w-full bg-gradient-to-r from-whale-skin to-autumn-landscape relative mt-4">
                             <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-autumn-landscape" size={20} />
                         </div>
                     </div>
 
                     {/* Step 2 */}
-                    <div className="flex flex-col items-center text-center max-w-[200px]">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-autumn-landscape to-pizazz flex items-center justify-center shadow-lg shadow-autumn-landscape/30 mb-4 relative group">
-                            <RefreshCw size={32} className="text-white animate-spin-slow" />
+                    <div
+                        className={`flex flex-col items-center text-center max-w-[200px] cursor-pointer transition-all duration-300 ${activeStep === 2 ? 'scale-105' : 'opacity-70 hover:opacity-100'}`}
+                        onClick={() => setActiveStep(2)}
+                    >
+                        <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${activeStep === 2 ? 'from-autumn-landscape to-pizazz shadow-autumn-landscape/50' : 'from-gray-200 to-gray-300'} flex items-center justify-center shadow-lg mb-4 relative group transition-all`}>
+                            <RefreshCw size={32} className={`${activeStep === 2 ? 'text-white animate-spin-slow' : 'text-gray-500'}`} />
                             <div className="absolute -top-2 -right-2 w-6 h-6 bg-whale-skin rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
                         </div>
-                        <h3 className="font-bold text-dark-knight mb-2">Artefact Vivant</h3>
+                        <h3 className={`font-bold ${activeStep === 2 ? 'text-autumn-landscape' : 'text-dark-knight'} mb-2 transition-colors`}>Artefact Vivant</h3>
                         <p className="text-sm text-skyline">Optimisation continue par l'IA et les règles métier</p>
                     </div>
 
                     {/* Arrow */}
-                    <div className="hidden md:flex flex-1 items-center justify-center px-4">
-                        <div className="h-0.5 w-full bg-gradient-to-r from-autumn-landscape to-whale-skin relative">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-xs font-bold text-skyline uppercase tracking-wider">
-                                Validation
-                            </div>
+                    <div className="hidden md:flex flex-1 items-center justify-center px-4 relative h-10">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 text-xs font-bold text-skyline uppercase tracking-wider mb-2">
+                            Validation
+                        </div>
+                        <div className="h-0.5 w-full bg-gradient-to-r from-autumn-landscape to-whale-skin relative mt-4">
                             <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-whale-skin" size={20} />
                         </div>
                     </div>
 
                     {/* Step 3 */}
-                    <div className="flex flex-col items-center text-center max-w-[200px]">
-                        <div className="w-20 h-20 rounded-2xl bg-white border-2 border-whale-skin flex items-center justify-center shadow-lg mb-4 relative group">
-                            <ShieldCheck size={32} className="text-whale-skin group-hover:scale-110 transition-transform" />
+                    <div
+                        className={`flex flex-col items-center text-center max-w-[200px] cursor-pointer transition-all duration-300 ${activeStep === 3 ? 'scale-105' : 'opacity-70 hover:opacity-100'}`}
+                        onClick={() => setActiveStep(3)}
+                    >
+                        <div className={`w-20 h-20 rounded-2xl bg-white border-2 ${activeStep === 3 ? 'border-autumn-landscape shadow-autumn-landscape/30' : 'border-whale-skin'} flex items-center justify-center shadow-lg mb-4 relative group transition-colors`}>
+                            <ShieldCheck size={32} className={`${activeStep === 3 ? 'text-autumn-landscape' : 'text-whale-skin'} transition-colors`} />
                             <div className="absolute -top-2 -right-2 w-6 h-6 bg-autumn-landscape rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
                         </div>
-                        <h3 className="font-bold text-dark-knight mb-2">Export Officiel</h3>
+                        <h3 className={`font-bold ${activeStep === 3 ? 'text-autumn-landscape' : 'text-dark-knight'} mb-2 transition-colors`}>Export Officiel</h3>
                         <p className="text-sm text-skyline">Génération du PDF final pour archivage légal</p>
                     </div>
+                </div>
+
+                {/* Detailed Content Area */}
+                <div className="bg-coast-cream/30 rounded-xl p-8 border border-autumn-landscape/10 min-h-[180px] transition-all duration-500 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-autumn-landscape to-pizazz"></div>
+
+                    {activeStep === 1 && (
+                        <div className="animate-fadeIn">
+                            <h3 className="text-xl font-bold text-whale-skin mb-4 flex items-center gap-2">
+                                <span className="w-8 h-8 rounded-full bg-autumn-landscape text-white flex items-center justify-center text-sm">1</span>
+                                La Co-Création
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 className="font-bold text-dark-knight mb-2 text-sm uppercase tracking-wide">L'Apport</h4>
+                                    <p className="text-skyline">Implication directe des parties prenantes dès le début du processus. L'interface guide la saisie pour ne rien oublier.</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-dark-knight mb-2 text-sm uppercase tracking-wide">Les Opportunités</h4>
+                                    <p className="text-skyline">Réduction drastique des allers-retours par email. Alignement immédiat des équipes sur les besoins et les contraintes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeStep === 2 && (
+                        <div className="animate-fadeIn">
+                            <h3 className="text-xl font-bold text-whale-skin mb-4 flex items-center gap-2">
+                                <span className="w-8 h-8 rounded-full bg-autumn-landscape text-white flex items-center justify-center text-sm">2</span>
+                                L'Artefact Vivant
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 className="font-bold text-dark-knight mb-2 text-sm uppercase tracking-wide">L'Apport</h4>
+                                    <p className="text-skyline">Un outil qui vit avec le projet, pas un document mort. Il intègre la logique métier et recalcule tout en temps réel.</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-dark-knight mb-2 text-sm uppercase tracking-wide">Les Opportunités</h4>
+                                    <p className="text-skyline">Ajustements instantanés, simulations de scénarios ("et si ?"), et prise de décision éclairée basée sur des données fiables.</p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeStep === 3 && (
+                        <div className="animate-fadeIn">
+                            <h3 className="text-xl font-bold text-whale-skin mb-4 flex items-center gap-2">
+                                <span className="w-8 h-8 rounded-full bg-autumn-landscape text-white flex items-center justify-center text-sm">3</span>
+                                L'Export Officiel
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 className="font-bold text-dark-knight mb-2 text-sm uppercase tracking-wide">L'Apport</h4>
+                                    <p className="text-skyline">La sécurité d'un document contractuel quand c'est nécessaire, généré à partir de données validées.</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-dark-knight mb-2 text-sm uppercase tracking-wide">Les Opportunités</h4>
+                                    <p className="text-skyline">Génération automatique sans erreur de copier-coller, conformité garantie, et archivage simplifié.</p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 

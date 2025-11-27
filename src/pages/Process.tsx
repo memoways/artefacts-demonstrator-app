@@ -13,7 +13,7 @@ const Process = () => {
                 </h1>
                 <div className="inline-flex flex-col md:flex-row items-center gap-4 md:gap-8 bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-desert-field">
                     <div className="text-center px-4">
-                        <div className="text-3xl md:text-4xl font-bold text-pizazz mb-1">12h</div>
+                        <div className="text-3xl md:text-4xl font-bold text-pizazz mb-1">5h</div>
                         <div className="text-xs font-bold text-skyline uppercase tracking-wider">Temps Total</div>
                     </div>
                     <div className="w-full h-px md:w-px md:h-12 bg-desert-field"></div>
@@ -113,11 +113,11 @@ const Process = () => {
                     <ul className="space-y-6">
                         <li className="flex items-start gap-4">
                             <div className="mt-1 p-1.5 bg-pizazz/10 rounded-full text-pizazz shrink-0">
-                                <Lightbulb size={16} />
+                                <Code size={16} />
                             </div>
                             <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Gestion de son propre flow de concentration</strong>
-                                <p className="text-whale-skin">Comme on fait plusieurs choses en parallèle (en attendant que l'IA travaille sur le développement), il faut garder une méthode et toujours centraliser les données.</p>
+                                <strong className="block text-dark-knight text-lg mb-1">L'Abstraction du Prompting</strong>
+                                <p className="text-whale-skin">Travailler via Antigravity demande une gymnastique mentale : tout passe par des prompts, sans toucher directement au code. Il faut apprendre à "parler" le langage de l'intention.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
@@ -125,17 +125,17 @@ const Process = () => {
                                 <Layers size={16} />
                             </div>
                             <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Difficulté d'utiliser plusieurs outils différents</strong>
-                                <p className="text-whale-skin">L'application de vibe coding, ici Antigravity de Google, en conjonction avec Github et pour le déployement Vercel.</p>
+                                <strong className="block text-dark-knight text-lg mb-1">Le Vertige des Possibles</strong>
+                                <p className="text-whale-skin">Avec une IA qui peut tout générer, le risque est de s'éparpiller. Le défi est de rester focus sur l'essentiel et de ne pas céder à la tentation d'ajouter des fonctionnalités superflues.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div className="mt-1 p-1.5 bg-pizazz/10 rounded-full text-pizazz shrink-0">
-                                <Cpu size={16} />
+                                <AlertTriangle size={16} />
                             </div>
                             <div>
-                                <strong className="block text-dark-knight text-lg mb-1">Diversité des modèles IA</strong>
-                                <p className="text-whale-skin">Comme les divers LLM ont tous des forces et des faiblesses différentes, la génération des fichiers markdown initiaux (les cervaux et indicateurs pour la création de l'artefact) s'est faite en utilisant à tour de rôle Claude, ChatGPT ou Perplexity.</p>
+                                <strong className="block text-dark-knight text-lg mb-1">Les Caprices de la Machine</strong>
+                                <p className="text-whale-skin">Parfois, l'IA déraille ou hallucine sur des détails. On perd du temps sur des petites anomalies imprévues qui demandent un debug créatif.</p>
                             </div>
                         </li>
                     </ul>

@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Little Helpers - Artefacts Demonstrator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Ce projet est un démonstrateur technique et conceptuel illustrant le passage du "Document statique" à "l'Artefact Vivant".**
 
-Currently, two official plugins are available:
+## 🎯 Le Pourquoi : La Vision "Little Helpers"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nous vivons une transition majeure dans la manière de travailler. Le paradigme classique "Document -> Réunion -> Décision" est en train de s'effondrer au profit d'une approche plus fluide, interactive et assistée par l'IA.
 
-## React Compiler
+Ce projet démontre comment des **artefacts jetables, interactifs et intelligents** peuvent remplacer les documents administratifs lourds (PDF, Excel, Word).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Les 3 Piliers de l'Artefact Vivant :
+1.  **Co-Création** : Une interface qui guide la saisie et structure la pensée, plutôt qu'une page blanche.
+2.  **Intelligence** : Une IA qui valide, suggère, simule et optimise en temps réel.
+3.  **Actionnabilité** : Un outil qui produit un résultat exploitable (décision, export officiel, plan d'action) immédiatement.
 
-## Expanding the ESLint configuration
+## 🛠 Le Comment : "Vibe Coding" & Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Ce démonstrateur a été construit selon la méthodologie du **"Vibe Coding"** : une approche où le développeur agit comme un chef d'orchestre, guidant des modèles d'IA pour générer le code, le design et le contenu.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### La Stack Technique
+*   **Framework** : React 19 + Vite
+*   **Langage** : TypeScript
+*   **Styling** : Tailwind CSS 4
+*   **Icons** : Lucide React
+*   **Routing** : React Router 7
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Les Outils de Fabrication
+*   **Orchestration** : Google Antigravity (Agentic AI)
+*   **Intelligence** : Claude 3.5 Sonnet, GPT-4o, Perplexity (pour la recherche et la synthèse)
+*   **Déploiement** : Vercel
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Installation & Démarrage
+
+Pour explorer le projet localement :
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+L'application sera accessible sur `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📂 Structure du Projet
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+*   `/src/pages` : Les différentes vues de l'application (Accueil, Démos, Coulisses).
+*   `/src/components` : Les briques d'interface réutilisables et les composants spécifiques aux démos.
+    *   `/theater` : Démo "Compagnie de Théâtre" (Budget, Planning).
+    *   `/pme` : Démo "PME & RH" (Onboarding, Juridique).
+    *   `/freelance` : Démo "Freelance" (Proposition commerciale).
+*   `/src/data` : Les données statiques et les prompts simulés.
+
+## 🌟 Les Démos Disponibles
+
+1.  **Le Théâtre** : Gestion de production, budget prévisionnel et planning de tournée.
+2.  **La PME** : Processus d'onboarding collaboratif et génération de contrats.
+3.  **Le Freelance** : Création de proposition commerciale augmentée par l'IA.
+
+---
+
+*Fait avec ❤️ et beaucoup de prompts par l'équipe Memoways.*
